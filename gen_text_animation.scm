@@ -29,26 +29,6 @@
     (gimp-image-insert-layer image animationbase 0 -1)
 
     ;; animations go in here
-    '(let* (
-	   (simultaneous_animation 0)
-	   (stroke_by_stroke_animation 1)
-	   (animation_mode (if (equal? animation_type simultaneous_animation) simultaneous_animation stroke_by_stroke_animation))
-	   (paint_path_but_dont_add_path_segments 1)
-	   (true 1)
-	   (false 0)
-	   (solid_color 0)
-	   (gradient_method "FG to BG (RGB)")
-	   (gradient_length 0.0)
-	   (paint_method_constant 0)
-	   (paint_method_incremental 1)
-	   (fade_out_last_segment false)
-	   )
-       (script-fu-animate-path-strokes image textpath animation_mode
-				      animation_framecount paint_path_but_dont_add_path_segments true
-				      1 2 solid_color intext_fontcolor '(255 255 255) gradient_method gradient_length
-				      paint_method_constant fade_out_last_segment 0.0 0 0)
-      )
-
     (let* (
 	   (true 1)
 	   (false 0)
